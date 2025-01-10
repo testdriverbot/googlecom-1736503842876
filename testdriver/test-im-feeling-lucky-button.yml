@@ -1,0 +1,16 @@
+version: 4.1.35
+steps:
+  - prompt: Assert that the "I'm Feeling Lucky" button is present.
+    commands:
+      - command: assert
+        expect: the "I'm Feeling Lucky" button is present
+  - prompt: >-
+      Assert that clicking "I'm Feeling Lucky" redirects correctly.  # Use the
+      content of the file from the environment
+    commands:
+      - command: hover-text
+        text: I'm Feeling Lucky
+        description: button next to Google Search
+        action: click
+      - command: assert
+        expect: the page redirects correctly
