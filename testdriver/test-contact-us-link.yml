@@ -1,0 +1,12 @@
+version: 4.1.35
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Scroll to the bottom of the Google homepage.
+    commands: []
+  - prompt: >-
+      Assert that the "How Search works" link is present.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: the "How Search works" link is present
