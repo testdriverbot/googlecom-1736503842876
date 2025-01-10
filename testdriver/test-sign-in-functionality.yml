@@ -1,0 +1,18 @@
+version: 4.1.35
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the "Sign in" button.
+    commands:
+      - command: hover-text
+        text: Sign in
+        description: sign in button in the top right corner
+        action: click
+  - prompt: >-
+      Assert that the sign-in page or prompt appears.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: the sign-in page is displayed with "Sign in" text
